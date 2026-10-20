@@ -1,0 +1,39 @@
+# dsh-desktop-notify — デスクトップ通知（Windows トースト）レイヤー。
+#
+# 行 `desktop-notify` の config で挙動を変えられる（すべて省略可）。
+# プロファイル側で上書きするときは、そのプロファイルの `cordis.patch.yml` に
+# 同じ id の行を足す（一致した行は config 全体を置き換えるので必要なキーは書き直す）。
+#
+#   enabled: bool           全体スイッチ（既定 true）
+#   language: 'ja' | 'en'   メッセージの言語（既定 'ja'）
+#   onQuestion: bool        質問（ask_user_question / exit_plan_mode）で通知（既定 true）
+#   onApproval: bool        承認待ち（approval/asked）で通知（既定 true）
+#   onTurnEnd: bool         ターン正常完了で通知（既定 true）
+#   onError: bool           エラー終了で通知（既定 true）
+#   onAborted: bool         中断で通知（既定 true）
+#   onBlocked: bool         ブロック / トークン上限で通知（既定 true）
+#   questionTools: [name]   回答待ちとして扱うツール名（既定 ['ask_user_question','exit_plan_mode']）
+#   rootsOnly: bool         サブエージェントのセッションを除外（既定 true）
+#   preview: bool           完了通知に直前の応答プレビューを添える（既定 true）
+#   bodyChars: number       本文の最大文字数（既定 180）
+#   sound: bool             通知音（既定 true）
+#   longDuration: bool      長めに表示（既定 true）
+#   minIntervalMs: number   連続通知の最小間隔ミリ秒（既定 500）
+#   logFile: path | null    通知の記録先 JSON Lines（既定 null）
+- insert:
+    - id: desktop-notify
+      name: dsh-desktop-notify
+      config:
+        enabled: true
+        language: ja
+        onQuestion: true
+        onApproval: true
+        onTurnEnd: true
+        onError: true
+        onAborted: true
+        onBlocked: true
+        rootsOnly: true
+        preview: true
+        sound: true
+        longDuration: true
+        logFile: null

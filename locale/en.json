@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Desktop Notifications",
+    "description": "Shows a Windows toast notification when DSH is waiting for your question answer or approval, finishes a turn, or fails."
+  }
+}

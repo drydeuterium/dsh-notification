@@ -1,0 +1,42 @@
+{
+  "name": "dsh-desktop-notify",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Desktop (Windows toast) notifications for DeepSeek Harness: waiting questions, approvals, turn completion and errors.",
+  "license": "MIT",
+  "author": "drydeuterium",
+  "homepage": "https://github.com/drydeuterium/dsh-notification#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drydeuterium/dsh-notification.git"
+  },
+  "bugs": {
+    "url": "https://github.com/drydeuterium/dsh-notification/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "notification",
+    "toast",
+    "windows",
+    "cordis"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.png"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.png",
+    "README.md"
+  ]
+}
